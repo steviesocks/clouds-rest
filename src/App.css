@@ -1,5 +1,6 @@
 body {
     font-family: 'Open Sans Condensed';
+    padding: 20px 40px;
 }
 
 h1 {
@@ -7,6 +8,3 @@ h1 {
     margin: 0;
 }
 
-span {
-
-}
