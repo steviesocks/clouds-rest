@@ -5,20 +5,27 @@ import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import Header from './components/header/header.component';
 import SignInAndRegisterPage from './pages/sign-in-and-register/sign-in-and-register.component';
-import { auth } from './firebase/firebase.utils';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 function App() {
-  const [ currentUser, setcurrentUser ] = useState(null);
+  const [ currentUser, setCurrentUser ] = useState(null);
   const [ userChange, setUserChange ] = useState(null);
 
   let unsubscribeFromAuth = null;
 
   useEffect(() => {
-    unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      setcurrentUser(user);
-      console.log(user);
+    unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
+        userRef.onSnapshot(snapShot => {
+          // console.log('snapsss', snapShot.data())
+          setCurrentUser({id: snapShot.id, ...snapShot.data()})
+        });
+      } else {
+        setCurrentUser(userAuth)
+        console.log(userAuth)
+      }
     });
-
     // clean up on component unmount
     return () => {
       unsubscribeFromAuth();
@@ -27,6 +34,7 @@ function App() {
 
   return (
     <div>
+      {console.log('currentUser', currentUser)}
       <Header currentUser={currentUser} />
       <Switch>
         <Route exact path='/' component={HomePage} />
