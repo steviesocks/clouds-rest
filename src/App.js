@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div>
-      {console.log('currentUser', currentUser)}
+      {/* {console.log('currentUser', currentUser)} */}
       <Header currentUser={currentUser} />
       <Switch>
         <Route exact path='/' component={HomePage} />
