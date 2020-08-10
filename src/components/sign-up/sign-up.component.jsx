@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import FormInput from '../form-input/form-input.component';
-import CustomButton from '../custom-button/custom-buton.component';
+import CustomButton from '../custom-button/custom-button.component';
 
 import './sign-up.styles.scss';
 
@@ -18,7 +18,7 @@ const SignUp = () => {
         event.preventDefault();
         let { displayName, email, password, confirmPassword } = state;
         
-        if (password != confirmPassword) {
+        if (password !== confirmPassword) {
             alert("passwords don't match");
             return;
         }
