@@ -14,7 +14,7 @@ import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
 
-function App({currentUser}) {
+function App({currentUser, setCurrentUser}) {
   // const [ currentUser, setCurrentUser ] = useState(null);
   const [ userChange, setUserChange ] = useState(null);
 
@@ -42,7 +42,6 @@ function App({currentUser}) {
 
   return (
     <div>
-      {/* {console.log('currentUser', currentUser)} */}
       <Header />
       <Switch>
         <Route exact path='/' component={HomePage} />
