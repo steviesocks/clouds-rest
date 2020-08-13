@@ -1,10 +1,10 @@
 const INITIAL_STATE = {
     sections: [
         {
-          title: 'boots',
+          title: 'hats',
           imageUrl: 'https://i.ibb.co/0YTqWd1/Header-how-to-choose-hiking-shoes-boots.jpg',
           id: 1,
-          linkUrl: 'boots'
+          linkUrl: 'shop/hats'
         },
         {
           title: 'tents',
