@@ -5,7 +5,7 @@ import { createStructuredSelector } from 'reselect';
 
 import { auth } from '../../firebase/firebase.utils';
 
-import Logo from '../../assets/clouds-rest-logo.png';
+import Logo from '../../assets/logo-70.png';
 
 import './header.styles.scss';
 import CartIcon from '../cart-icon/cart-icon.component';
