@@ -3,24 +3,36 @@ import { connect } from 'react-redux';
 
 import { clearItemFromCart, addItem, removeItem } from '../../redux/cart/cart.actions';
 
-import './checkout-item.styles.scss';
+import { CheckoutItemContainer, 
+    ImageContainer, 
+    TextContainer, 
+    QuantityContainer,
+    DecreaseButtonContainer,
+    RemoveButtonContainer } from './checkout-item.styles';
 
 const CheckoutItem = ({ cartItem, clearItem, addItem, removeItem }) => {
     const { name, imageUrl, price, quantity } = cartItem;
+    
+    let decreaseButtonProps = { invisible: false };
+    decreaseButtonProps["invisible"] = quantity < 1 ? true : false;
+    
     return (
-        <div className='checkout-item'>
-            <div className='image-container'>
+        <CheckoutItemContainer>
+            <ImageContainer>
                 <img src={imageUrl} alt='item'/>
-            </div>
-            <span className='name'>{name}</span>
-            <div className='quantity'>
-                <div className={`${ quantity < 1 ? 'invisible' : null } arrow`} onClick={() => removeItem(cartItem)}>&#10094;</div>
-                <span className='value'>{quantity}</span>
-                <div className='arrow' onClick={() => addItem(cartItem)}>&#10095;</div>
-            </div>
-            <span className='price'>{price}</span>
-            <span className='remove-button' onClick={() => clearItem(cartItem)}>&#10005;</span>
-        </div>
+            </ImageContainer>
+            <TextContainer>{name}</TextContainer>
+            <QuantityContainer>
+                <DecreaseButtonContainer 
+                    {...decreaseButtonProps} 
+                    onClick={() => removeItem(cartItem)}>&#10094;
+                </DecreaseButtonContainer> 
+                <span>{quantity}</span>
+                <div onClick={() => addItem(cartItem)}>&#10095;</div>
+            </QuantityContainer>
+            <TextContainer>{price}</TextContainer>
+            <RemoveButtonContainer onClick={() => clearItem(cartItem)}>&#10005;</RemoveButtonContainer>
+        </CheckoutItemContainer>
 )};
 
 const mapDispatchToProps = dispatch => ({

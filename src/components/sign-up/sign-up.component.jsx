@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
-import './sign-up.styles.scss';
+import { SignUpContainer, TitleContainer } from './sign-up.styles';
 
 import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 
@@ -50,8 +50,8 @@ const SignUp = () => {
     }
 
     return (
-        <div className='sign-up'>
-            <h2 className='title'>I do not have an account</h2>
+        <SignUpContainer>
+            <TitleContainer>I do not have an account</TitleContainer>
             <span>Sign up with email and password</span>
             <form className='sign-up-form' onSubmit={handleSubmit}>
                 <FormInput
@@ -88,7 +88,7 @@ const SignUp = () => {
                 />
                 <CustomButton type='submit'>Sign Up</CustomButton>
             </form>
-        </div>
+        </SignUpContainer>
     )
 }
 
