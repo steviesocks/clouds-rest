@@ -5,7 +5,7 @@ import { createStructuredSelector } from 'reselect';
 
 import { auth } from '../../firebase/firebase.utils';
 
-import Logo from '../../assets/logo-70.png';
+import {ReactComponent as Logo} from '../../assets/CloudsRestLogo-grey.svg';
 
 import './header.styles.scss';
 import CartIcon from '../cart-icon/cart-icon.component';
@@ -18,8 +18,8 @@ import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink  } from '.
 const Header = ({ currentUser, hidden }) => (
     <HeaderContainer>
         <LogoContainer to='/'>
-            {/* <Logo className='logo' /> */}
-            <img alt='' src={Logo} style={{width: 60}}/>
+            <Logo />
+            {/* <img alt='' src={Logo} style={{width: 60}}/> */}
         </LogoContainer>
         <OptionsContainer>
             <OptionLink to='/shop'>

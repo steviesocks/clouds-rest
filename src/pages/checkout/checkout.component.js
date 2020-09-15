@@ -6,45 +6,47 @@ import CheckoutItem from '../../components/checkout-item/checkout-item.component
 
 import { selectCartItems, selectCartTotal } from '../../redux/cart/cart.selectors'
 
+import { CheckoutPageContainer, 
+    CheckoutHeaderContainer, 
+    HeaderBlockContainer, 
+    TotalContainer, 
+    TestCardContainer } from './checkout.styles';
 
-import './checkout.styles.scss';
 import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
 
 const CheckoutPage = ({ cartItems, total }) => (
-    <div className='checkout-page'>
-        <div className='checkout-header'>
-            <div className='header-block'>
+    <CheckoutPageContainer>
+        <CheckoutHeaderContainer>
+            <HeaderBlockContainer>
                 <span>Product</span>
-            </div>
-            <div className='header-block'>
+            </HeaderBlockContainer>
+            <HeaderBlockContainer>
                 <span>Description</span>
-            </div>
-            <div className='header-block'>
+            </HeaderBlockContainer>
+            <HeaderBlockContainer>
                 <span>Quantity</span>
-            </div>
-            <div className='header-block'>
+            </HeaderBlockContainer>
+            <HeaderBlockContainer>
                 <span>Price</span>
-            </div>
-            <div className='header-block'>
+            </HeaderBlockContainer>
+            <HeaderBlockContainer>
                 <span>Remove</span>
-            </div>
-        </div>
+            </HeaderBlockContainer>
+        </CheckoutHeaderContainer>
         {
             cartItems.map(cartItem => (
                 <CheckoutItem key={cartItem.id} cartItem={cartItem} />
             ))
         }
-        <div className='total'>
+        <TotalContainer>
             <span>TOTAL: ${total}</span>
-        </div>
+        </TotalContainer>
 
         <StripeCheckoutButton price={total} />
 
-        <div>
-            <span className='test-card'>!!Please use test card for all payments!!<br />4242 4242 4242 4242 - Exp: 01/22 - CW: 123</span>
-        </div>
+        <TestCardContainer>!!Please use test card for all payments!!<br />4242 4242 4242 4242 - Exp: 01/22 - CW: 123</TestCardContainer>
 
-    </div>
+    </CheckoutPageContainer>
 );
 
 const mapStateToProps = createStructuredSelector({
