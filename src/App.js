@@ -16,7 +16,6 @@ import { selectCurrentUser } from './redux/user/user.selectors';
 import { selectCollectionsForPreview } from './redux/shop/shop.selectors';
 
 function App({ currentUser, setCurrentUser }) {
-  // const [ currentUser, setCurrentUser ] = useState(null);
   const [ userChange, setUserChange ] = useState(null);
 
   let unsubscribeFromAuth = null;
