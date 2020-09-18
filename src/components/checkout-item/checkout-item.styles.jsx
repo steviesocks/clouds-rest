@@ -37,18 +37,6 @@ export const QuantityContainer = styled(TextContainer)`
     }
 `;
 
-const invisibleButtonStyles = css`
-    visibility: hidden;
-`;
-
-const getButtonStyles = props => (
-    props.invisible ? invisibleButtonStyles : null
-);
-
-export const DecreaseButtonContainer = styled.div`
-    ${getButtonStyles}
-`;
-
 export const RemoveButtonContainer = styled.div`
     padding-left: 12px;
     cursor: pointer;

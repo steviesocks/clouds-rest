@@ -7,14 +7,10 @@ import { CheckoutItemContainer,
     ImageContainer, 
     TextContainer, 
     QuantityContainer,
-    DecreaseButtonContainer,
     RemoveButtonContainer } from './checkout-item.styles';
 
 const CheckoutItem = ({ cartItem, clearItem, addItem, removeItem }) => {
     const { name, imageUrl, price, quantity } = cartItem;
-    
-    let decreaseButtonProps = { invisible: false };
-    decreaseButtonProps["invisible"] = quantity < 1 ? true : false;
     
     return (
         <CheckoutItemContainer>
@@ -23,10 +19,10 @@ const CheckoutItem = ({ cartItem, clearItem, addItem, removeItem }) => {
             </ImageContainer>
             <TextContainer>{name}</TextContainer>
             <QuantityContainer>
-                <DecreaseButtonContainer 
-                    {...decreaseButtonProps} 
+                <div
+                    style={quantity < 1 ? {visibility: "hidden"} : null}
                     onClick={() => removeItem(cartItem)}>&#10094;
-                </DecreaseButtonContainer> 
+                </div> 
                 <span>{quantity}</span>
                 <div onClick={() => addItem(cartItem)}>&#10095;</div>
             </QuantityContainer>
