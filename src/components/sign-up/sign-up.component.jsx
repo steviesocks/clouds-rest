@@ -10,7 +10,10 @@ import { signUpStart } from '../../redux/user/user.actions';
 
 const SignUp = ({ signUpStart }) => {
     const [state, setState] = useState({
-        
+        displayName: '',
+        email: '',
+        password: '',
+        confirmPassword: ''
     });
 
     let { displayName, email, password, confirmPassword } = state;

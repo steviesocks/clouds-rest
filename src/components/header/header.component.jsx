@@ -1,9 +1,6 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-
-import { auth } from '../../firebase/firebase.utils';
 
 import {ReactComponent as Logo} from '../../assets/CloudsRestLogo-grey.svg';
 
@@ -21,7 +18,6 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
     <HeaderContainer>
         <LogoContainer to='/'>
             <Logo />
-            {/* <img alt='' src={Logo} style={{width: 60}}/> */}
         </LogoContainer>
         <OptionsContainer>
             <OptionLink to='/shop'>

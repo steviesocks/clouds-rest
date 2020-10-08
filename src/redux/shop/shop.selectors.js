@@ -8,8 +8,6 @@ export const selectShopCollections = createSelector(
     shop => shop.collections
 );
 
-export const selectMemoizedShopCollections = memoize( () => selectShopCollections );
-
 export const selectCollectionsForPreview = createSelector(
     [selectShopCollections],
     collections => collections ? Object.keys(collections).map(key => collections[key]) : []
