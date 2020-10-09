@@ -6,7 +6,7 @@ const mainColor = 'black';
 const shrinkStyles = css`
     top: -14px;
     font-size: 12px;
-    color: $main-color;
+    color: ${mainColor};
 `;
 
 export const GroupContainer = styled.div`
