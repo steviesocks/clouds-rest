@@ -40,5 +40,5 @@ app.post('/payment', (req, res) => {
         } else {
             res.status(200).send({ success: stripeRes });
         }
-    })
-})
+    });
+});
