@@ -7,6 +7,10 @@ export const CheckoutPageContainer = styled.div`
     flex-direction: column;
     align-items: center;
     margin: 50px auto 0;
+
+    @media screen and (max-width: 800px) {
+        width: 90vw;
+    }
 `;
 
 export const CheckoutHeaderContainer = styled.div`
@@ -15,6 +19,11 @@ export const CheckoutHeaderContainer = styled.div`
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid darkgrey;
+
+    @media screen and (max-width: 800px) {
+        display: grid;
+        grid-template-columns: 3fr 4fr 4fr 2fr 1fr;
+    }
 `;
 
 export const HeaderBlockContainer = styled.div`
@@ -24,12 +33,20 @@ export const HeaderBlockContainer = styled.div`
     &:last-child {
         width: 8%;
     }
+
+    @media screen and (max-width: 800px) {
+        width: unset;
+    }
 `;
 
 export const TotalContainer = styled.div`
     margin-top: 30px;
     margin-left: auto;
     font-size: 36px;
+
+    @media screen and (max-width: 800px) {
+        margin-bottom: 30px;
+    }
 `;
 
 export const TestCardContainer = styled.div`
