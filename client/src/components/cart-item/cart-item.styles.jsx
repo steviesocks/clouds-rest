@@ -5,6 +5,10 @@ export const CartItemContainer = styled.div`
     display: flex;
     height: 80px;
     margin-bottom: 15px;
+
+    @media screen and (max-width: 800px) {
+        height: unset;
+    }
 `;
 
 export const CartItemImg = styled.img`
