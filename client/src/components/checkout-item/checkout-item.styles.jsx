@@ -8,6 +8,12 @@ export const CheckoutItemContainer = styled.div`
     padding: 15px 0;
     font-size: 20px;
     align-items: center;
+
+    @media screen and (max-width: 800px) {
+        display: grid;
+        grid-template-columns: 3fr 4fr 4fr 2fr 1fr;
+        grid-gap: 7px;
+    }
 `;
 
 export const ImageContainer = styled.div`
@@ -18,10 +24,18 @@ export const ImageContainer = styled.div`
         width: 100%;
         height: 100%;
     }
+
+    @media screen and (max-width: 800px) {
+        width: unset;
+    }
 `;
 
 export const TextContainer = styled.div`
     width: 23%;
+
+    @media screen and (max-width: 800px) {
+        width: unset;
+    }
 `;
 
 export const QuantityContainer = styled(TextContainer)`

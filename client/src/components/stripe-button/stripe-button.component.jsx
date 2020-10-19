@@ -2,7 +2,7 @@ import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 
-import logo from '../../assets/clouds-rest-logo.png';
+import logo from '../../assets/CloudsRestLogo-grey.svg';
 
 const StripeCheckoutButton = ({ price }) => {
     const priceInCents = price * 100;
